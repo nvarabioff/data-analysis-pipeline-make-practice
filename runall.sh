@@ -7,7 +7,7 @@
 # takes no arguments.
 
 # example usage:
-# bash run_all.sh
+# bash runall.sh
 
 # count the words
 python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat
@@ -21,5 +21,5 @@ python scripts/plotcount.py --input_file=results/abyss.dat --output_file=results
 python scripts/plotcount.py --input_file=results/last.dat --output_file=results/figure/last.png
 python scripts/plotcount.py --input_file=results/sierra.dat --output_file=results/figure/sierra.png
 
-# write the report
+# render the report
 quarto render report/count_report.qmd
