@@ -13,33 +13,37 @@ novels. It reports the top 10 most occurring words in each book in a [report](do
 
 2. Run the following commands to create the conda environment:
 
+    ```bash
+    conda-lock install --name da-pipeline-make conda-lock.yml
+    ```
+
+3. Activate the conda environment:
+
+    ```bash
+    conda activate da-pipeline-make
+    ```
+
+### Run the analysis with GNU Make
+
+Run the analysis:
+
 ```bash
-conda-lock install --name da-pipeline-make conda-lock.yml
+make all
 ```
 
-### Run the analysis
-
-Activate the conda environment:
+Reset the analysis the starting point:
 
 ```bash
-conda activate da-pipeline-make
+make clean
 ```
+
+### Run the analysis with Bash
 
 Run the analysis:
 
 ```bash
 bash runall.sh
 ```
-
-## Exercise
-
-Your task is to add a "smarter" data analysis pipeline using GNU Make!
-It should accomplish the same task as `bash runall.sh` when you type
-`make all`.
-
-It should reset the analysis the starting point
-(the state when you first copied this repo)
-when you type `make clean`.
 
 ## Depenedencies
 
@@ -49,10 +53,3 @@ when you type `make clean`.
   - `click`
   - `matplotlib`
   - `pandas`
-
-## Makefile
-
-```bash
-make results/isles.dat
-make clean
-```
